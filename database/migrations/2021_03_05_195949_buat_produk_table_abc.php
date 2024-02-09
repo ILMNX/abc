@@ -25,6 +25,11 @@ class BuatProdukTableAbc extends Migration
             $table->integer('le_commission');
             $table->integer('abc_operation');
             $table->integer('leadership_fund');
+            $table->float('lf_dana_lms');
+            $table->float('lf_lf_adp1');
+            $table->float('lf_retirement_fund');
+            $table->float('lf_lf_adp2');
+            $table->float('lf_le_fund');
             $table->integer('harga_laporan');
             $table->integer('harga_tithe');
             $table->integer('harga_le');

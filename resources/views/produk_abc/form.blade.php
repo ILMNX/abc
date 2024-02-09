@@ -93,6 +93,18 @@
                             <input type="number" min="1" step="any" name="leadership_fund" id="leadership_fund" class="form-control" required readonly>
                             <span class="help-block with-errors"></span>
                         </div>
+                        <ul class="col-md-3 col-lg-offset-1">
+                            <li>Dana LMS <i> 2%</i></li>
+                            <input type="number" min="1" step="any" name="lf_dana_lms" id="lf_dana_lms" class="form-control" required readonly>
+                            <li>Leadership Fund (ADP)<i> 1%</i></li>
+                            <input type="number" min="1" step="any" name="lf_lf_adp1" id="lf_lf_adp1" class="form-control" required readonly>
+                            <li>Retirement Fund<i> 1%</i></li>
+                            <input type="number" min="1" step="any" name="lf_retirement_fund" id="lf_retirement_fund" class="form-control" required readonly>
+                            <li>Leadership Fund (ADP)<i> 9%</i></li>
+                            <input type="number" min="1" step="any" name="lf_lf_adp2" id="lf_lf_adp2" class="form-control" required readonly>
+                            <li>LE Fund<i> 1%</i></li>
+                            <input type="number" min="1" step="any" name="lf_le_fund" id="lf_le_fund" class="form-control" required readonly>
+                        </ul>
                     </div>
                     <div class="form-group row">
                         <label for="harga_laporan" class="col-lg-2 col-lg-offset-1 control-label">Harga Laporan</label>
@@ -166,12 +178,19 @@
 </div>
 
 <script>
-document.getElementById('harga_dasar').addEventListener('input', function() {
+    document.getElementById('harga_dasar').addEventListener('input', function() {
     var hargaDasar = parseFloat(this.value);
     var hargaBeli = (hargaDasar * 0.3).toFixed(0);
     var leCommission = (hargaDasar * 0.5).toFixed(0);
     var abcOperation = (hargaDasar * 0.06).toFixed(0);
+    //LEADERSHIP FUND 14%----------------------------------------
     var leadershipFund = (hargaDasar * 0.14).toFixed(0);
+        var danaLms = (leadershipFund*0.02);
+        var leadershipFundAdp1 = (leadershipFund*0.01);
+        var retirementFund = (leadershipFund * 0.01);
+        var leadershipFundAdp2 = (leadershipFund * 0.09);
+        var leFund = (leadershipFund * 0.01);
+    //LEADERSHIP FUND 14%-----------------------------------------
     var hargaLaporan = (hargaDasar).toFixed(0);
     var hargaTithe = (parseFloat(leCommission) * 0.1).toFixed(0);
     var hargaLe = parseFloat(hargaBeli) + parseFloat(abcOperation) + parseFloat(leadershipFund) + parseFloat(hargaTithe);
@@ -179,10 +198,16 @@ document.getElementById('harga_dasar').addEventListener('input', function() {
     var pointBuku = (hargaUmum/20000).toFixed(2);
     var hargaJual = hargaDasar;
 
+
     document.getElementById('harga_beli').value = hargaBeli;
     document.getElementById('le_commission').value = leCommission;
     document.getElementById('abc_operation').value = abcOperation;
     document.getElementById('leadership_fund').value = leadershipFund;
+        document.getElementById('lf_dana_lms').value = danaLms;
+        document.getElementById('lf_lf_adp1').value = leadershipFundAdp1;
+        document.getElementById('lf_retirement_fund').value = retirementFund;
+        document.getElementById('lf_lf_adp2').value = leadershipFundAdp2;
+        document.getElementById('lf_le_fund').value = leFund;
     document.getElementById('harga_laporan').value = hargaLaporan;
     document.getElementById('harga_tithe').value = hargaTithe;
     document.getElementById('harga_le').value = hargaLe;
@@ -200,6 +225,11 @@ document.getElementById('productForm').addEventListener('submit', function(event
     var leCommission = parseFloat(document.getElementById('le_commission').value);
     var abcOperation = parseFloat(document.getElementById('abc_operation').value);
     var leadershipFund = parseFloat(document.getElementById('leadership_fund').value);
+        var danaLms = parseFloat(document.getElementById('lf_dana_lms').value);
+        var leadershipFundAdp1 = parseFloat(document.getElementById('lf_lf_adp1').value);
+        var retirementFund = parseFloat(document.getElementById('lf_retirement_fund').value);
+        var leadershipFundAdp2 = parseFloat(document.getElementById('lf_lf_adp2').value);
+        var leFund = parseFloat(document.getElementById('lf_le_fund').value);
     var hargaLaporan = parseFloat(document.getElementById('harga_laporan').value);
     var hargaTithe = parseFloat(document.getElementById('harga_tithe').value);
     var hargaLe = parseFloat(document.getElementById('harga_le').value);
@@ -224,7 +254,6 @@ function formatRupiah(angka) {
     rupiah = split[1] !== undefined ? rupiah + '.' + split[1] : rupiah;
     return rupiah;
 }
-
-
 </script>
+
 

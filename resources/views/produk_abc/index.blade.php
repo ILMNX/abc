@@ -41,6 +41,11 @@
                             <th>LE Commission</th>
                             <th>ABC Operation & Cashier</th>
                             <th>Leadership Fund & Retirement</th>
+                            <th>Dana LMS</th>
+                            <th>Leadership Fund(ADP)</th>
+                            <th>Retirement Fund</th>
+                            <th>Leadership Fund(ADP)</th>
+                            <th>LE Fund</th>
                             <th>Harga Laporan</th>
                             <th>Tithe</th>
                             <th>Harga LE</th>
@@ -86,6 +91,11 @@
                 {data: 'le_commission'},
                 {data: 'abc_operation'},
                 {data: 'leadership_fund'},
+                {data: 'lf_dana_lms'},
+                {data: 'lf_lf_adp1'},
+                {data: 'lf_retirement_fund'},
+                {data: 'lf_lf_adp2'},
+                {data: 'lf_le_fund'},
                 {data: 'harga_laporan'},
                 {data: 'harga_tithe'},
                 {data: 'harga_le'},
@@ -148,6 +158,11 @@
                 $('#modal-form [name=le_commission]').val(response.le_commission);
                 $('#modal-form [name=abc_operation]').val(response.abc_operation);
                 $('#modal-form [name=leadership_fund]').val(response.leadership_fund);
+                $('#modal-form [name=lf_dana_lms]').val(response.lf_dana_lms);
+                $('#modal-form [name=lf_lf_adp1]').val(response.lf_lf_adp1);
+                $('#modal-form [name=lf_retirement_fund]').val(response.lf_retirement_fund);
+                $('#modal-form [name=lf_lf_adp2]').val(response.lf_lf_adp2);
+                $('#modal-form [name=lf_le_fund]').val(response.lf_le_fund);
                 $('#modal-form [name=harga_laporan]').val(response.harga_laporan);
                 $('#modal-form [name=harga_tithe]').val(response.harga_tithe);
                 $('#modal-form [name=harga_le]').val(response.harga_le);

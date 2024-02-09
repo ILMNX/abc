@@ -60,6 +60,21 @@ class ProdukControllerAbc extends Controller
             ->addColumn('leadership_fund', function ($produk) {
                 return format_uang($produk->leadership_fund);
             })
+            ->addColumn('lf_dana_lms', function ($produk) {
+                return format_uang($produk->lf_dana_lms);
+            })
+            ->addColumn('lf_lf_adp1', function ($produk) {
+                return format_uang($produk->lf_lf_adp1);
+            })
+            ->addColumn('lf_retirement_fund', function ($produk) {
+                return format_uang($produk->lf_retirement_fund);
+            })
+            ->addColumn('lf_lf_adp2', function ($produk) {
+                return format_uang($produk->lf_lf_adp2);
+            })
+            ->addColumn('lf_le_fund', function ($produk) {
+                return format_uang($produk->lf_le_fund);
+            })
             ->addColumn('harga_laporan', function ($produk) {
                 return format_uang($produk->harga_laporan);
             })
